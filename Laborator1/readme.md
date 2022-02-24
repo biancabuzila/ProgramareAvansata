@@ -1,4 +1,3 @@
-1. Compulsory (1p)
 -> Display on the screen the message "Hello World!". Run the application. If it works, go to step 2 :)
 Am folosit shorcut-ul sout+tab pentru a obtine functia System.out.println() cu ajutorul careia am afisat mesajul cerut.
 

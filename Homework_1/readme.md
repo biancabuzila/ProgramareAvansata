@@ -1,13 +1,13 @@
 ### Homework 1
 
-**Let *n*,* p* be two integers and C<sub>1</sub>,...,C<sub>m</sub> a set of letters (the alphabet), all given as a command line arguments. Validate the arguments!**
+**Let *n*, *p* be two integers and C<sub>1</sub>,...,C<sub>m</sub> a set of letters (the alphabet), all given as a command line arguments. Validate the arguments!**
 
 Am considerat că argumentele sunt valide daca sunt îndeplinite următoarele condiții:
 + sunt date cel puțin 3 argumente (*n*, *p* și măcar o literă)
 + *n* și *p* sunt ambele numere întregi strict pozitive
 + fiecare C<sub>i</sub> reprezintă o singură literă majusculă
 
-** Create an array of *n* strings (called *words*), each word containing exactly *p* characters from the given alphabet. Display on the screen the generated array.**
+**Create an array of *n* strings (called *words*), each word containing exactly *p* characters from the given alphabet. Display on the screen the generated array.**
 
 Am folosit metoda *generate* a clasei Main. Aceasta construiește un array de *n* cuvinte a câte *p* caractere din array-ul de char *c*, pe care îl returnează. Cele *p* caractere sunt alese în mod aleator din *c* cu ajutorul funcției *Math.random()*. În *pos* va fi stocată o valoare cuprinsă între 0 și *m*; dacă *pos*=*m* (*pos* depășește limitele array-ului *c*) atunci va fi aleasă o altă valoare în același mod. Variabila *pos* reprezintă poziția în *c* pe care se află caracterul ce urmează a fi concatenat la cuvântul construit la acel moment.
 

@@ -1,4 +1,4 @@
-###Homework 2
+### Homework 2
 
 **Create a class that describes an instance of the *problem*.**
 

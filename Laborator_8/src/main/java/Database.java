@@ -4,14 +4,15 @@ import java.sql.SQLException;
 
 public class Database {
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-    private static final String USER = "student";
-    private static final String PASSWORD = "STUDENT";
+    private static final String USER = "world";
+    private static final String PASSWORD = "WORLD";
     private static Connection connection = null;
 
     private Database() {}
 
     public static Connection getConnection() {
-        createConnection();
+        if (connection == null)
+            createConnection();
         return connection;
     }
 

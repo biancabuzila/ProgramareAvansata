@@ -1,11 +1,10 @@
 import java.sql.*;
 
 public class ContinentDAO {
-    private String name;
 
     public void create(String name) throws SQLException {
         Connection con = Database.getConnection();
-        try (PreparedStatement pstmt = con.prepareStatement("insert into continents (name) values (?)")) {
+        try (PreparedStatement pstmt = con.prepareStatement("INSERT INTO continents (name) VALUES (?)")) {
             pstmt.setString(1, name);
             pstmt.executeUpdate();
         }
@@ -14,7 +13,7 @@ public class ContinentDAO {
     public Integer findByName(String name) throws SQLException {
         Connection con = Database.getConnection();
         try (Statement stmt = con.createStatement();
-             ResultSet rs = stmt.executeQuery("select id from continents where name='" + name + "'")) {
+             ResultSet rs = stmt.executeQuery("SELECT id FROM continents WHERE name='" + name + "'")) {
             return rs.next() ? rs.getInt(1) : null;
         }
     }
@@ -23,7 +22,7 @@ public class ContinentDAO {
         Connection con = Database.getConnection();
         try (Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery("select name from continents where id='" + id + "'")) {
-            return rs.next() ? rs.getString(2) : null;
+            return rs.next() ? rs.getString(1) : null;
         }
     }
 }

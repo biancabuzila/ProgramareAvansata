@@ -71,9 +71,21 @@ public class Player implements Runnable {
 
     @Override
     public void run() {
-        do {
-            running = submitWord();
-        } while (running);
+        synchronized (game) {
+            while (game.getRounds() != 0)
+                if (game.canMove(this)) {
+                    if (submitWord())
+                        game.setRounds(game.getRounds() - 1);
+                    game.setPlayerToMove((game.getPlayerToMove() + 1) % game.getNrPlayers());
+                    game.notifyAll();
+                } else {
+                    try {
+                        game.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+        }
     }
 
     public String getName() {

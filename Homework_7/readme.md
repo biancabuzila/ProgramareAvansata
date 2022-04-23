@@ -28,6 +28,6 @@ Pentru a afișa câștigătorul la finalul jocului, pentru fiecare thread creat 
 
 **Make sure that players wait their turns, using a wait-notify approach.**
 
-**Implement a timekeeper thread that runs concurrently with the player threads, as a daemon. This thread will display the running time of the game and it will stop the game if it exceeds a certain time limit.**
+În clasa _Game_ am adăugat ca proprietăți _playerToMove_ de tip int care indică indexul jucătorului ce urmează și _rounds_ de tip int ce indică numărul de runde pe care îl va avea jocul (nu am știut cum să implementez un timekeeper care să oprească jocul după un anumit timp).
 
-Urmează să fac și ultimele 2 cerințe din temă.
+În clasa _Player_, am modificat metoda _run_ astfel încât un jucător să aștepte dacă nu este rândul său. În caz contrar, el poate adăuga un cuvânt pe tabla de joc (dacă poate forma unul cu piesele pe care le are), _playerToMove_ va indica jucătorul următor, iar _rounds_ scade cu 1 dacă jucătorul a reușit să formeze un cuvânt (am observat că se întâmplă des să nu reușească așa că am făcut această alegere ca jocul să dureze puțin mai mult).
